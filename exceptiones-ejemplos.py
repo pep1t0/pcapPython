@@ -2,6 +2,7 @@ def readint(prompt, min, max):
     
     while True: 
         try:
+            print(prompt)
             x = int(input())
             assert x >= -10 and x <=10
             return x
