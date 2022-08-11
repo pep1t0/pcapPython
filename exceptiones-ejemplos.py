@@ -1,3 +1,6 @@
+'''
+Ejemplo de control de excepciones
+'''
 def readint(prompt, min, max):
     
     while True: 
