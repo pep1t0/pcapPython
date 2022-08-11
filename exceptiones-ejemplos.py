@@ -1,5 +1,5 @@
 '''
-Ejemplo de control de excepciones
+Ejemplo de control de excepciones 2022
 '''
 def readint(prompt, min, max):
     
