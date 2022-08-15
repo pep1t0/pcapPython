@@ -5,6 +5,9 @@
 
 '''
 
+from pickle import FALSE
+
+
 def noRepetidos(fila):
     lista = list(fila)
     lista.sort()
@@ -26,8 +29,85 @@ def validaColumna(entrada):
             return False
         aux = ''   
     return True
+
+def valida3x3(entrada):
+
+    # bloque 1
+    aux = ''
+    for i in range(3):
+        for j in range(3):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
     
-# def valida3x3(entrada):
+    aux = ''
+    for i in range(3):
+        for j in range(3,6):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    aux = ''
+    for i in range(3):
+        for j in range(6,9):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    #bloque 2
+    aux = ''
+    for i in range(3,6):
+        for j in range(3):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    aux = ''
+    for i in range(3,6):
+        for j in range(3,6):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    aux = ''
+    for i in range(3,6):
+        for j in range(6,9):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    #bloque 3
+    aux = ''
+    for i in range(6,9):
+        for j in range(3):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    aux = ''
+    for i in range(6,9):
+        for j in range(3,6):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    aux = ''
+    for i in range(6,9):
+        for j in range(6,9):
+            aux += entrada[i][j]
+    if not noRepetidos(aux):
+        print("[!] [ERROR] Bloque 3x3 no valido")
+        return False 
+    
+    return True              
     
 def entradaValores():
     
@@ -45,7 +125,20 @@ def entradaValores():
             matriz.append(list(fila))
             i += 1
                         
-    validaColumna(matriz)
+    if not validaColumna(matriz) and  not valida3x3(matriz):
+        print("[!] [ERROR] SUDOKU NO VALIDO")
+        return
+    else:
+        print("[*] SUDOKU VALIDO!!!!! ")
+    
+        
 
 matriz = [['2','9','5','7','4','3','8','6','1'],['4','3','1','8','6','5','9','2','7'],['8','7','6','1','9','2','5','4','3'],['3','8','7','4','5','9','2','1','6'],['6','1','2','3','8','7','4','9','5'],['5','4','9','2','1','6','7','3','8'],['7','6','3','5','2','4','1','8','9'],['9','2','8','6','7','1','3','5','4'],['1','5','4','9','3','8','6','7','2']]    
-validaColumna(matriz)    
+#valida3x3(matriz)
+#validaColumna(matriz)  
+  
+if not validaColumna(matriz) and not valida3x3(matriz):
+    print("[!] [ERROR] SUDOKU NO VALIDO")
+    # return
+else:
+    print("[*] SUDOKU VALIDO!!!!! ")
