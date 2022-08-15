@@ -20,7 +20,7 @@ def display(numero):
     
     for j in range(5):            
         for i in str(numero):
-            print(patrones[j][int(i)-1],end=' ')
+            print(patrones[j][int(i)-1],end='   ')
         print(f"")
 
 display(123)
