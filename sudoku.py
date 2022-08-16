@@ -38,7 +38,7 @@ def valida3x3(entrada):
         for j in range(3):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     aux = ''
@@ -46,7 +46,7 @@ def valida3x3(entrada):
         for j in range(3,6):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     aux = ''
@@ -54,7 +54,7 @@ def valida3x3(entrada):
         for j in range(6,9):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     #bloque 2
@@ -63,7 +63,7 @@ def valida3x3(entrada):
         for j in range(3):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     aux = ''
@@ -71,7 +71,7 @@ def valida3x3(entrada):
         for j in range(3,6):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     aux = ''
@@ -79,7 +79,7 @@ def valida3x3(entrada):
         for j in range(6,9):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     #bloque 3
@@ -88,7 +88,7 @@ def valida3x3(entrada):
         for j in range(3):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     aux = ''
@@ -96,7 +96,7 @@ def valida3x3(entrada):
         for j in range(3,6):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     aux = ''
@@ -104,12 +104,12 @@ def valida3x3(entrada):
         for j in range(6,9):
             aux += entrada[i][j]
     if not noRepetidos(aux):
-        print("[!] [ERROR] Bloque 3x3 no valido")
+        print(aux[0:3],aux[3:6],aux[6:9],sep='\n')
         return False 
     
     return True              
     
-def entradaValores():
+def sudoku():
     
     matriz = []
     i = 1
@@ -125,20 +125,15 @@ def entradaValores():
             matriz.append(list(fila))
             i += 1
                         
-    if not validaColumna(matriz) and  not valida3x3(matriz):
-        print("[!] [ERROR] SUDOKU NO VALIDO")
-        return
+    if not validaColumna(matriz): 
+        print("[!] [ERROR] Sudoku NO VALIDO")
+    elif not valida3x3(matriz):
+        print("[!] [ERROR] 3x3 NO VALIDO")
     else:
-        print("[*] SUDOKU VALIDO!!!!! ")
-    
+        print("[*] Sudoku VALIDO!!!!! ")
         
 
-matriz = [['2','9','5','7','4','3','8','6','1'],['4','3','1','8','6','5','9','2','7'],['8','7','6','1','9','2','5','4','3'],['3','8','7','4','5','9','2','1','6'],['6','1','2','3','8','7','4','9','5'],['5','4','9','2','1','6','7','3','8'],['7','6','3','5','2','4','1','8','9'],['9','2','8','6','7','1','3','5','4'],['1','5','4','9','3','8','6','7','2']]    
-#valida3x3(matriz)
-#validaColumna(matriz)  
-  
-if not validaColumna(matriz) and not valida3x3(matriz):
-    print("[!] [ERROR] SUDOKU NO VALIDO")
-    # return
-else:
-    print("[*] SUDOKU VALIDO!!!!! ")
+# matriz = [['2','9','5','7','4','3','8','6','1'],['4','3','1','8','6','5','9','2','7'],['8','7','6','1','9','2','5','4','3'],['3','8','7','4','5','9','2','1','6'],['6','1','2','3','8','7','4','9','5'],['5','4','9','2','1','6','7','3','8'],['7','6','3','5','2','4','1','8','9'],['9','2','8','6','7','1','3','5','4'],['1','5','4','9','3','8','6','7','2']]    
+# matriz = [['1','9','5','7','4','3','8','6','2'],['4','3','1','8','6','5','9','2','7'],['8','7','6','1','9','2','5','4','3'],['3','8','7','4','5','9','2','1','6'],['6','1','2','3','8','7','4','9','5'],['5','4','9','2','1','6','7','3','8'],['7','6','3','5','2','4','1','8','9'],['9','2','8','6','7','1','3','5','4'],['2','5','4','9','3','8','6','7','1']]
+
+sudoku()  
