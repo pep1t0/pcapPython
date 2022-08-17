@@ -10,7 +10,7 @@ import (
 )
 
 // change this!
-const IP = "192.168.0.1"
+const IP = "192.168.0.19"
 
 // and this
 const PORT = 4443
